@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "yadro-tryout"
+version = "0.1.0"
+description = ""
+authors = ["Alexey Kutsenko <alexey_kutsenko@bk.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+flask = {extras = ["async"], version = "^2.2.2"}
+
+
+[tool.poetry.group.dev.dependencies]
+sphinx = "^6.0.0"
+m2r = "^0.3.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,10 @@
+.vscode/
+.fleet/
+.idea/
+
+**/__pycache__/
+**/.pyc
+
+poetry.lock
+
+**/.DS_Store

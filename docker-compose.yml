@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: app
+    ports:
+      - "5123:5000"
+
+  docs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: docs
+    volumes:
+      - ./docs:/src/docs:rw
+
+  nginx:
+    image: nginx:1.23.3-alpine
+    network_mode: host
+    volumes:
+      - ./nginx/:/etc/nginx/conf.d/:ro
+      - ./docs/build/html:/www/html/public:ro
+    depends_on:
+      - backend
+      - docs
