@@ -18,6 +18,9 @@ jobs:
       - name: Prepare docs
         run: echo "Docs version is $RELEASE_VERSION"
 
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Building docs from source
         run: docker compose build docs
 
