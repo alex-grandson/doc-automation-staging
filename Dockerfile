@@ -22,9 +22,19 @@ RUN poetry config virtualenvs.create false \
 
 COPY backend/ /src/backend
 
+
+# TEST
+
+FROM app AS test
+
+COPY --from=app /src /src
+
+COPY tests/ /src/tests
+
+
 # DOCS
 
-FROM app AS docs
+FROM test AS docs
 
 RUN apk add --update make
 
@@ -41,13 +51,3 @@ COPY *.md ../
 RUN sphinx-apidoc -o ./source ..
 
 CMD ["make", "html"]
-
-# TEST
-
-FROM app AS test
-
-COPY --from=app /src /src
-
-COPY test/ /src/test
-
-ENTRYPOINT [ "poetry", "run", "pytest" ]
