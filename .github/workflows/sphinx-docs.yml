@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-22.04
     env:
       RELEASE_VERSION: "1.0.0"
-      REPO_URL: ${{ env.GITHUB_SERVER_URL }}/${{ env.GITHUB_REPOSITORY }}
+      REPO_URL: https://github.com/${{ github.repository }}
     steps:
 
       - name: Prepare docs
