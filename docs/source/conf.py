@@ -59,5 +59,5 @@ html_static_path = ["_static"]
 
 rst_epilog = f"""
 .. |ProjectVersion| replace:: RELEASE: {release}
-.. |Repo| replace:: {repo}
+.. |Repo| replace:: Link to `GitHub Repo`_. \n.. _GitHub Repo: {repo}
 """

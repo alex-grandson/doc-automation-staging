@@ -8,9 +8,7 @@ Welcome to Yadro Tryout's documentation!
 
 |ProjectVersion|
 
-Repository link to `GitHub`_.
-
-.. _GitHub: |Repo|
+|Repo|
 
 .. mdinclude:: ../../README.md
 
