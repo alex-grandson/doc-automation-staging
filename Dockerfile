@@ -1,4 +1,4 @@
-FROM python:3.11-alpine3.17 as app
+FROM python:3.9-alpine3.17 as app
 
 ARG APP_ENV=dev
 
@@ -22,25 +22,13 @@ RUN poetry config virtualenvs.create false \
 
 COPY backend/ /src/backend
 
-CMD [ "flask", "run", "--host=0.0.0.0" ]
-
-# TEST
-
-FROM app AS test
-
-COPY --from=app /src /src
-
-COPY test/ /src/test
-
-CMD [ "poetry", "run", "pytest" ]
-
 # DOCS
 
 FROM app AS docs
 
 RUN apk add --update make
 
-RUN pip install sphinx-rtd-theme
+RUN pip install sphinx-rtd-theme docutils==0.19
 
 COPY --from=app /src /src
 
@@ -50,8 +38,14 @@ COPY docs ./
 
 RUN sphinx-apidoc -o ./source .
 
-RUN pwd
+CMD ["make", "html"]
 
-RUN ls -la
+# TEST
 
-RUN make html
+FROM app AS test
+
+COPY --from=app /src /src
+
+COPY test/ /src/test
+
+ENTRYPOINT [ "poetry", "run", "pytest" ]

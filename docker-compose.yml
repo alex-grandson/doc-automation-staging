@@ -9,6 +9,7 @@ services:
       target: app
     ports:
       - "5123:5000"
+    entrypoint: [ "flask", "run", "--host=0.0.0.0" ]
 
   docs:
     build:
@@ -16,7 +17,7 @@ services:
       dockerfile: Dockerfile
       target: docs
     volumes:
-      - ./docs:/src/docs:rw
+      - ./docs/build:/src/docs/build
 
   nginx:
     image: nginx:1.23.3-alpine

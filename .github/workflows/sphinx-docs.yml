@@ -1,0 +1,28 @@
+name: Documentation [Build and deploy]
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  generate_docs:
+    runs-on: ubuntu-22.04
+    env:
+      RELEASE_VERSION: "1.0.0"
+    steps:
+
+      - name: Prepare docs
+        run: echo "Docs version is $RELEASE_VERSION"
+
+      - name: Building docs from source
+        run: docker compose build docs
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: docs/build/html
+          branch: gh-pages
