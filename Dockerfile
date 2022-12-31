@@ -36,7 +36,9 @@ WORKDIR /src/docs
 
 COPY docs ./
 
-RUN sphinx-apidoc -o ./source .
+COPY *.md ../
+
+RUN sphinx-apidoc -o ./source ..
 
 CMD ["make", "html"]
 
