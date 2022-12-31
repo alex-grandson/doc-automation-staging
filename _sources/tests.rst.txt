@@ -1,0 +1,21 @@
+tests package
+=============
+
+Submodules
+----------
+
+tests.wsgi\_test module
+-----------------------
+
+.. automodule:: tests.wsgi_test
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: tests
+   :members:
+   :undoc-members:
+   :show-inheritance:
