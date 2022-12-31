@@ -4,10 +4,11 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Index &mdash; Yadro Tryout 0.1.0 documentation</title>
+  <title>backend package &mdash; Yadro Tryout 0.1.0 documentation</title>
   
 
   
@@ -38,8 +39,9 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="src" href="modules.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,8 +90,19 @@
 <li class="toctree-l1"><a class="reference internal" href="author.html">Alexey Kutsenko</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">src</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">backend package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-backend.wsgi">backend.wsgi module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#backend.wsgi.hello_world"><code class="docutils literal notranslate"><span class="pre">hello_world()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-backend">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
             
@@ -138,11 +151,15 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Index</li>
+          <li><a href="modules.html">src</a> &raquo;</li>
+        
+      <li>backend package</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
+          
+            <a href="_sources/backend.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -155,66 +172,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
+  <section id="backend-package">
+<h1>backend package<a class="headerlink" href="#backend-package" title="Permalink to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-backend.wsgi">
+<span id="backend-wsgi-module"></span><h2>backend.wsgi module<a class="headerlink" href="#module-backend.wsgi" title="Permalink to this heading">¶</a></h2>
+<p>WSGI server root module file. Basic routing is implemented here</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="backend.wsgi.hello_world">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">backend.wsgi.</span></span><span class="sig-name descname"><span class="pre">hello_world</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/backend/wsgi.html#hello_world"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#backend.wsgi.hello_world" title="Permalink to this definition">¶</a></dt>
+<dd><p>Health-check backend route</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: server status string</p>
+</dd>
+</dl>
+</dd></dl>
 
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- <a href="#B"><strong>B</strong></a>
- | <a href="#H"><strong>H</strong></a>
- | <a href="#M"><strong>M</strong></a>
- 
-</div>
-<h2 id="B">B</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    backend
-
-      <ul>
-        <li><a href="backend.html#module-backend">module</a>
-</li>
-      </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    backend.wsgi
-
-      <ul>
-        <li><a href="backend.html#module-backend.wsgi">module</a>
-</li>
-      </ul></li>
-  </ul></td>
-</tr></table>
-
-<h2 id="H">H</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="backend.html#backend.wsgi.hello_world">hello_world() (in module backend.wsgi)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="M">M</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    module
-
-      <ul>
-        <li><a href="backend.html#module-backend">backend</a>
-</li>
-        <li><a href="backend.html#module-backend.wsgi">backend.wsgi</a>
-</li>
-      </ul></li>
-  </ul></td>
-</tr></table>
-
+</section>
+<section id="module-backend">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-backend" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
 
 
            </div>
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="modules.html" class="btn btn-neutral float-left" title="src" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 
