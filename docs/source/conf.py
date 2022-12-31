@@ -5,25 +5,28 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 # -- Path setup --------------------------------------------------------------
-
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-#
 import os
 import sys
+import datetime
 
 sys.path.insert(0, os.path.abspath("../.."))
 
 # -- Project information -----------------------------------------------------
 
+today = datetime.date.today()
+year = today.year
+
 project = "Yadro Tryout"
-copyright = "2022, Alexey Kutsenko"
+copyright = f"{year}, Alexey Kutsenko"
 author = "Alexey Kutsenko"
 
-# The full version, including alpha/beta/rc tags
-release = "0.1.0"
+# -- Variables -----------------------------------------------------
 
+# The full version, including alpha/beta/rc tags
+release = (
+    "0.1.0" if os.getenv("RELEASE_VERSION") is None else os.getenv("RELEASE_VERSION")
+)
+repo = "" if os.getenv("REPO_URL") is None else os.getenv("REPO_URL")
 
 # -- General configuration ---------------------------------------------------
 
@@ -33,6 +36,8 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx.ext.autodoc",
 ]
+
+variables_to_export = ["release", "repo"]
 
 templates_path = ["_templates"]
 
@@ -51,3 +56,8 @@ numpydoc_show_class_members = False
 html_theme = "sphinx_rtd_theme"
 
 html_static_path = ["_static"]
+
+rst_epilog = f"""
+.. |ProjectVersion| replace:: RELEASE: {release}
+.. |Repo| replace:: {repo}
+"""

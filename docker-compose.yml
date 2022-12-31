@@ -16,6 +16,9 @@ services:
       context: .
       dockerfile: Dockerfile
       target: docs
+      args:
+        - RELEASE_VERSION=${RELEASE_VERSION-0.1.0}
+        - REPO_URL=${REPO_URL}
     volumes:
       - ./docs/build:/src/docs/build
 

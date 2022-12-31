@@ -36,6 +36,12 @@ COPY tests/ /src/tests
 
 FROM test AS docs
 
+ARG RELEASE_VERSION=0.1.0
+ARG REPO_URL
+
+ENV RELEASE_VERSION=${RELEASE_VERSION}
+ENV REPO_URL=${REPO_URL}
+
 RUN apk add --update make
 
 RUN pip install sphinx-rtd-theme docutils==0.19
