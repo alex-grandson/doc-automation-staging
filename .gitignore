@@ -10,5 +10,5 @@ poetry.lock
 
 **/.DS_Store
 
-docs/build/*
-!docs/build/.nojekyll
+docs/build/html/*
+!docs/build/html/.nojekyll
